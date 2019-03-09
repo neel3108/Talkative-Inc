@@ -101,6 +101,7 @@ mongoose.connect( url  ,
 
 app.get("/", (req, res) => res.sendFile(__dirname + "/index.html"));
 app.get("*", (req, res) => res.sendFile(__dirname + "/index.html"));
+app.use(express.static(path.join(__dirname, '/index.html')))
 //running the server
 http.listen(port, () => {
   console.log(`Server listening at port ${port}`);
